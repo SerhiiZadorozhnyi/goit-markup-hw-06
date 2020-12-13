@@ -310,9 +310,9 @@ h2{
     padding-right: 40px;
 }
 
-.modal-input li{
+/* .modal-input li{
     cursor: pointer;
-}
+} */
 
 .modal-input li:not(:last-child){
     padding-bottom: 10px;
@@ -345,6 +345,7 @@ h2{
     padding-left: 42px;
     outline: none;
     color: var(--black-color);
+    cursor: pointer;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -369,11 +370,15 @@ h2{
     line-height: 16px;
     letter-spacing: 0.01em;
     color: var(--black-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .comment:hover,
 .comment:focus{
     border: 1px solid var(--accent-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    
 }
 
 textarea[name="comment"]::-webkit-input-placeholder {
@@ -409,26 +414,103 @@ textarea[name="comment"]::-moz-placeholder {
     fill: var(--text-color-black);
 }
 
-/* .input-comments{
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    box-sizing: border-box;
-    border-radius: 4px;
-    width: 100%;
-    height: 120px;
-    padding: 12px 16px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.01em;
-    color: var(--black-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-} */
-
 .input-comments:hover,
 .input-comments:focus{
     border: 1px solid var(--accent-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Чекбокс */
+.check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+
+.modal-check{
+    margin-right: 7px;
+}
+
+.modal-check-text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: var(--text-color-grey);
+}
+
+.modal-check-text span a{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+/* input[type="checkbox"]::before{
+    background-image: url(../images/icons/sprite.svg#icon-check);
+    fill: tomato;
+    width: 16px;
+    height: 15px;
+} */
+
+/* input[type="checkbox"] + label::before{
+    content: "";
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin: 0 5px 0 0;
+    background-image: url(../images/icons/sprite.svg#icon-check);
+} */
+
+/* input[type="checkbox"] {
+    display: none;
+  } */
+
+/* Кнопка отправки */
+.modal-send{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.send-button{
+    background: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: 0;
+    width: 200px;
+    height: 50px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--text-color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+.send-button:hover,
+.send-button:focus{
+    background: #188CE8;
+    cursor: pointer;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
