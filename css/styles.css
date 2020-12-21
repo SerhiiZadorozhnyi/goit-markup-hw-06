@@ -10,6 +10,7 @@
     --border-color: #EEEEEE;
     --black-color: #000000;
     --border-header: #ECECEC;
+    --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *{
@@ -384,7 +385,6 @@ h2{
 
 textarea[name="comment"]::-webkit-input-placeholder {
     color: rgba(117, 117, 117, 0.5)
-    /* color: red; */
    } 
 
 textarea[name="comment"]::-moz-placeholder {
@@ -422,20 +422,42 @@ textarea[name="comment"]::-moz-placeholder {
 }
 
 /* Чекбокс */
-.check{
+.checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+.lable-checkbox{
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
 }
-
-.modal-check{
-    margin-right: 7px;
+  
+.input-checkbox{
+    margin-right: 8px;
+    appearance: none;
+    cursor: pointer;
 }
-
-.modal-check-text{
+  
+.input-checkbox svg{
+    display: inline-block;
+    transition-duration: 250ms;
+    transition-timing-function: var(--animating-timing);
+}
+  
+.input-checkbox:checked + svg{
+    background-image: url("../images/icons/icon-check.svg");
+    background-color: var(--accent-color);
+    background-size: contain;
+    background-origin: border-box;
+    fill: transparent;
+    border-radius: 2px;
+    transition-duration: 250ms;
+    transition-timing-function: var(--animating-timing);
+}
+  
+.checkbox-text{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -443,9 +465,11 @@ textarea[name="comment"]::-moz-placeholder {
     line-height: 24px;
     letter-spacing: 0.03em;
     color: var(--text-color-grey);
+    padding-left: 8.38px;
 }
-
-.modal-check-text span a{
+  
+.checkbox-link{
+    padding-left: 5px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -454,28 +478,7 @@ textarea[name="comment"]::-moz-placeholder {
     letter-spacing: 0.03em;
     text-decoration-line: underline;
     color: var(--accent-color);
-    cursor: pointer;
 }
-
-/* input[type="checkbox"]::before{
-    background-image: url(../images/icons/sprite.svg#icon-check);
-    fill: tomato;
-    width: 16px;
-    height: 15px;
-} */
-
-/* input[type="checkbox"] + label::before{
-    content: "";
-    display: inline-block;
-    height: 18px;
-    width: 18px;
-    margin: 0 5px 0 0;
-    background-image: url(../images/icons/sprite.svg#icon-check);
-} */
-
-/* input[type="checkbox"] {
-    display: none;
-  } */
 
 /* Кнопка отправки */
 .modal-send{
@@ -1049,6 +1052,7 @@ input[type="email"]::-moz-placeholder {
     padding-left: 22px;
     border: 0px;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
 
 .portfolio-nav button:hover,
